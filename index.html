@@ -107,6 +107,19 @@
 			.contact-info {
 				margin-top: 1.5em;
 				line-height: 1.6;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 1em;
+			}
+
+			.contact-info img {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				object-fit: cover;
+				filter: grayscale(100%);
+				border: 2px solid #444;
 			}
 
 			/* Responsive adjustments for smaller screens */
@@ -115,6 +128,8 @@
 				.button { width: 90%; max-width: 220px; padding: 1em 1.2em; font-size: 1em; }
 				#socials img { width: 120px; height: 120px; }
 				#intro .inner p { font-size: 1.05em; line-height: 1.6; }
+				.contact-info { flex-direction: column; gap: 0.5em; }
+				.contact-info img { width: 80px; height: 80px; }
 			}
 		</style>
 	</head>
@@ -122,7 +137,7 @@
 
 		<!-- Header / Social Links -->
 		<section id="socials" class="wrapper style1 fade-up">
-			<img src="images/profile.jpg" alt="Profile Image" />
+			<img src="images/logo.jpg" alt="Logo Image" />
 			<h1>Sam (Ridley) Hutchison</h1>
 			<h2>Creative Director & Marketing Specialist</h2>
 
@@ -163,8 +178,11 @@
 				<p>I’m a designer who thrives where creativity meets execution. With experience managing teams, budgets, and content, I build work that’s both thoughtful and effective.</p>
 
 				<div class="contact-info">
-					<p>Email: <a href="mailto:NightAndDay@ridleysamm.com">NightAndDay@ridleysamm.com</a><br />
-					Phone: <a href="tel:18137147797">(813) 714-7797</a></p>
+					<img src="images/profile.jpg" alt="Profile Image" />
+					<div>
+						<p>Email: <a href="mailto:NightAndDay@ridleysamm.com">NightAndDay@ridleysamm.com</a><br />
+						Phone: <a href="tel:18137147797">(813) 714-7797</a></p>
+					</div>
 				</div>
 			</div>
 		</section>
