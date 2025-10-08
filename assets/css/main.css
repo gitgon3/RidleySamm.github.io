@@ -4,6 +4,7 @@
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
 */
 
 html, body, div, span, applet, object,
@@ -3907,3 +3908,17 @@ input, select, textarea {
 			}
 
 		}
+/* Rounded aesthetic update */
+button, .button, input, .card, img, .container, .content, .inner {
+  border-radius: 12px; /* adjust higher for more curve */
+}
+
+section, article, .wrapper {
+  border-radius: 16px;
+}
+
+img {
+  border-radius: 10px;
+}button, .button, .card, .container, .inner {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
