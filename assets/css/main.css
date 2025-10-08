@@ -3910,7 +3910,7 @@ input, select, textarea {
 		}
 /* Rounded aesthetic update */
 button, .button, input, .card, img, .container, .content, .inner {
-  border-radius: 12px; /* adjust higher for more curve */
+  border-radius: 14px; /* adjust higher for more curve */
 }
 
 section, article, .wrapper {
@@ -3922,3 +3922,4 @@ img {
 }button, .button, .card, .container, .inner {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
+
