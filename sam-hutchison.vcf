@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Hutchison;Sam;;;
+FN:Sam Hutchison
+ORG:PopUp Bagels
+TITLE:Catering & Event Manager
+EMAIL;TYPE=INTERNET;TYPE=WORK:Samuel.Hutchison@MPZholdings.com
+TEL;TYPE=WORK,VOICE:(813) 415-1077
+PHOTO;VALUE=URI:https://ridleysamm.com/images/SamsProf.png
+END:VCARD
