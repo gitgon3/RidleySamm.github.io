@@ -3920,3 +3920,12 @@ input, select, textarea {
     transform: scale(0.97);
   }
 }
+
+button.download-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  line-height: 1 !important;
+  padding: 10px 25px !important;
+}
