@@ -3922,10 +3922,26 @@ input, select, textarea {
 }
 
 button.download-btn {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  line-height: 1 !important;
-  padding: 10px 25px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75em auto;
+  width: 80%;
+  max-width: 250px;
+  text-align: center;
+  padding: 1.1em 1.5em;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 8px;
+  background-color: #d4af37;
+  color: #111;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
 }
+
+button.download-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
