@@ -21,11 +21,11 @@
     }
 
     .card-container {
-      width: 90%;
-      max-width: 350px;
-      height: 220px;
+      width: 80%;
+      max-width: 260px; /* portrait ratio */
+      height: 400px;
       perspective: 1000px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .card {
@@ -63,18 +63,19 @@
     }
 
     button.download-btn {
-      background: #e74c3c;
-      color: #fff;
+      background: #f1c40f;
+      color: #111;
       border: none;
-      padding: 14px 24px;
-      font-size: 1rem;
-      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      border-radius: 25px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
+      font-weight: 600;
     }
 
     button.download-btn:hover {
-      background: #c0392b;
+      background: #d4ac0d;
     }
 
     p.contact-info {
@@ -99,7 +100,7 @@
 
   <button class="download-btn"
     onclick="window.location.href='https://ridleysamm.com/contact-card/contact-card/ridley-samm.vcf'">
-    Tap to Download Contact Card
+    Download
   </button>
 
   <p class="contact-info">
