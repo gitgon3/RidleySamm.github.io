@@ -7,6 +7,59 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 
   <style>
+    /* ---------- NAVIGATION BAR ---------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(17, 17, 17, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.7em 1em;
+    }
+
+    .nav-logo a {
+      font-weight: 700;
+      color: #f1c40f;
+      font-size: 1.1em;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.2em;
+      font-size: 0.95em;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f1c40f;
+    }
+
+    @media screen and (max-width: 600px) {
+      .nav-links a {
+        margin-left: 0.8em;
+        font-size: 0.9em;
+      }
+      .nav-inner {
+        flex-direction: column;
+        gap: 0.3em;
+      }
+    }
+
+    /* ---------- PAGE STYLING ---------- */
     body {
       display: flex;
       flex-direction: column;
@@ -18,22 +71,9 @@
       font-family: "Poppins", sans-serif;
       text-align: center;
       padding: 20px;
+      padding-top: 80px; /* Adds space so card doesn’t sit under navbar */
     }
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <a href="index.html">Samm Ridley</a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="business-card.html">Contact Card</a>
-      <a href="pricing.html">Pricing</a>
-    </div>
-  </div>
-</nav>
-    
+
     .card-container {
       width: 80%;
       max-width: 260px; /* portrait ratio */
@@ -77,20 +117,27 @@
     }
 
     button.download-btn {
-      background: #d4af37; /* softer gold */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.75em auto;
+      width: 80%;
+      max-width: 250px;
+      text-align: center;
+      padding: 1.1em 1.5em;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 8px;
+      background-color: #d4af37;
       color: #111;
       border: none;
-      padding: 10px 25px;
-      font-size: 0.95rem;
-      border-radius: 25px;
       cursor: pointer;
-      transition: 0.3s ease;
-      font-weight: 600;
-      text-align: center;
+      transition: transform 0.2s, opacity 0.2s;
     }
 
     button.download-btn:hover {
-      background: #bfa232;
+      transform: scale(1.05);
+      opacity: 0.9;
     }
 
     img.qr-code {
@@ -109,6 +156,22 @@
 </head>
 <body>
 
+  <!-- ---------- NAV BAR HTML ---------- -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html">Samm Ridley</a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="business-card.html">Contact Card</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ---------- MAIN PAGE CONTENT ---------- -->
   <div class="card-container" id="card">
     <div class="card">
       <div class="card-face card-front">
@@ -141,5 +204,6 @@
       card.classList.toggle('is-flipped');
     });
   </script>
+
 </body>
 </html>
