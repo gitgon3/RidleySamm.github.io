@@ -136,6 +136,57 @@ p.contact-info {
   font-size: 0.9rem;
   color: #bbb;
 }
+</style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="plans.html">Plans</a>
+        <a href="business-card.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Business Card -->
+  <div class="card-container" id="card">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="images/Front.jpg" alt="Front of Business Card" />
+      </div>
+      <div class="card-face card-back">
+        <img src="images/Back.jpg" alt="Back of Business Card" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Download Button -->
+  <button class="download-btn"
+    onclick="window.location.href='https://ridleysamm.com/contact-card/ridley-samm.vcf'">
+    Download
+  </button>
+
+  <!-- QR Code -->
+  <img class="qr-code" src="images/qr-ridleycc.png" alt="QR Code for Contact Card" />
+
+  <!-- Contact Info -->
+  <p class="contact-info">
+    Samm Ridley<br>
+    <a href="mailto:NightAndDay@ridleysamm.com" style="color:#fff;">NightAndDay@ridleysamm.com</a><br>
+    (813) 714-7797
+  </p>
+
+  <script>
+    const cardContainer = document.getElementById('card');
+    const card = cardContainer.querySelector('.card');
+
+    cardContainer.addEventListener('click', () => {
+      card.classList.toggle('is-flipped');
+    });
   </script>
 
 </body>
