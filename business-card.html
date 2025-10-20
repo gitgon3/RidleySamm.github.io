@@ -101,62 +101,13 @@
       transform: rotateY(180deg);
     }
 
-    /* --- Button --- */
-button.download-btn {
-  background: #d4af37; /* softer gold */
-  color: #111;
-  border: none;
-  padding: 10px 25px;
-  font-size: 0.95rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-weight: 600;
-  text-align: center;
-  display: block;
-  margin: 10px auto 0; /* ensures perfect centering */
-}
-
-    button.download-btn:hover {
-      background: #bfa232;
-    }
-
-    /* --- QR Code & Contact Info --- */
-    img.qr-code {
-      margin: 20px 0;
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-    }
-
-    p.contact-info {
-      margin-top: 0;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="pricing.html">Plans</a>
-        <a href="business-card.html">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  /* --- Layout spacing --- */
+/* --- Layout spacing and visual balance --- */
 .card-container {
   width: 80%;
-  max-width: 260px;
+  max-width: 260px; /* portrait ratio */
   height: 400px;
   perspective: 1000px;
-  margin: 20px auto 10px; /* reduced bottom margin so button sits closer */
+  margin: 40px auto 15px; /* adds consistent space below the card */
 }
 
 button.download-btn {
@@ -171,23 +122,28 @@ button.download-btn {
   font-weight: 600;
   text-align: center;
   display: block;
-  margin: 10px auto 15px; /* balanced top & bottom spacing */
+  margin: 15px auto; /* perfect horizontal centering + balanced spacing */
 }
 
-  <img class="qr-code" src="images/SRHvbc.png" alt="QR Code for Contact Card" />
+button.download-btn:hover {
+  background: #bfa232;
+  transform: scale(1.05);
+  opacity: 0.9;
+}
 
-  <p class="contact-info">
-    Samm Ridley<br>
-    <a href="mailto:NightAndDay@ridleysamm.com" style="color:#fff;">NightAndDay@ridleysamm.com</a><br>
-    (813) 714-7797
-  </p>
+img.qr-code {
+  display: block;
+  margin: 15px auto 10px; /* centers vertically with consistent space */
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
 
-  <script>
-    const cardContainer = document.getElementById('card');
-    const card = cardContainer.querySelector('.card');
-    cardContainer.addEventListener('click', () => {
-      card.classList.toggle('is-flipped');
-    });
+p.contact-info {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
   </script>
 
 </body>
