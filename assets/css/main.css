@@ -3908,7 +3908,24 @@ input, select, textarea {
 			}
 
 		}
-
+button.download-btn {
+  background: #d4af37;          /* gold color */
+  color: #111;
+  border: none;
+  padding: 0px 28px;           /* balanced spacing */
+  font-size: 0.95rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+  display: inline-flex;          /* fixes vertical text alignment */
+  justify-content: center;       /* horizontal centering */
+  align-items: center;           /* vertical centering */
+  line-height: 1;                /* removes “low” baseline issue */
+  text-align: center;
+  margin: 15px auto;
+  box-sizing: border-box;
+}
 /* Mobile Tap Feedback */
 @media (hover: none) and (pointer: coarse) {
   a, button {
@@ -3925,5 +3942,6 @@ button.download-btn:hover {
   transform: scale(1.05);
   opacity: 0.9;
 }
+
 
 
