@@ -9,52 +9,8 @@
 
     <style>
       
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="plans.html">Plans</a>
-      <a href="business-card.html">Contact</a>
-    </div>
-  </div>
-</nav>
-
-.nav-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px; /* more spacing between links */
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85rem; /* smaller text */
-  padding: 8px 14px; /* adds the “box” look */
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #d4af37; /* soft gold hover */
-  background: rgba(255, 255, 255, 0.15);
-}
-
-      @media screen and (max-width: 600px) {
-        .nav-links a {
-          margin-left: 0.8em;
-          font-size: 0.9em;
-        }
-        .nav-inner {
-          flex-direction: column;
-          gap: 0.3em;
-        }
-      }
+<body>
+  <div id="navbar-placeholder"></div>
 
       /* ---------- PAGE STYLING ---------- */
       body {
@@ -241,6 +197,17 @@
     </footer>
 
     <!-- ---------- SCRIPTS ---------- -->
+
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+      });
+  </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
