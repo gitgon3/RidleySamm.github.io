@@ -1,11 +1,6 @@
-/* =========================================================
-   SAM (RIDLEY) HUTCHISON — MAIN STYLESHEET
-   Supports: Homepage, Gallery, Plans, Business Card
-   ========================================================= */
-
-/* ---------- BASE RESET & BODY ---------- */
+/* ---------- BASE RESET & BODY (Updated with parallax stars) ---------- */
 body {
-  background-color: #1a1a1a;
+  background: linear-gradient(to bottom, #1b1a2f, #2a2a4f); /* dark purplish-blue gradient */
   color: #e0e0e0;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -14,330 +9,109 @@ body {
   margin: 0;
   padding-top: 31px; /* space for fixed navbar */
   box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
 }
 
-h1, h2, h3 {
-  color: #f0f0f0;
-  margin-bottom: 0.5em;
-}
-
-a {
-  color: #ec4d98;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   NAVIGATION BAR
-   ========================================================= */
-.navbar {
-  width: 100%;
-  background: rgba(20, 20, 20, 0.95);
+/* ---------- PARALLAX TWINKLING STARS (DENSE & RANDOMIZED) ---------- */
+body::before {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
-  padding: 10px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-.nav-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85rem;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #d4af37;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* =========================================================
-   BUTTONS (GLOBAL)
-   ========================================================= */
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.75em auto;
-  width: 80%;
-  max-width: 250px;
-  text-align: center;
-  padding: 1.1em 1.5em;
-  font-weight: bold;
-  font-size: 1.1em;
-  border-radius: 8px;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.button:hover {
-  transform: scale(1.05);
+  width: 300%;
+  height: 300%;
+  background: transparent;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 2px, transparent 1px),
+    radial-gradient(white 0.7px, transparent 0.7px),
+    radial-gradient(white 1.5px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px, 70px 70px, 90px 90px, 120px 120px, 200px 200px;
+  background-position: 
+    0 0, 15px 30px, 60px 20px, 90px 50px, 150px 80px;
+  background-attachment: fixed; /* parallax effect */
+  animation: starsTwinkle 10s linear infinite, starsMove 250s linear infinite;
+  z-index: -1;
   opacity: 0.9;
 }
 
-.button.instagram { background-color: #ba33d6; color: white; }
-.button.youtube { background-color: #d20d0d; color: white; }
-.button.cashapp { background-color: #12df5a; color: white; }
-
-/* =========================================================
-   HERO SECTION (Profile + Buttons + Quote)
-   ========================================================= */
-#hero {
-  position: relative;
-  background: url("images/logo.jpg") center center / cover no-repeat;
-  color: #f5f5f5;
-  text-align: center;
-  padding: 5em 1em 4em;
-  overflow: hidden;
+/* Twinkle Animation */
+@keyframes starsTwinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
-#hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(6px);
-  z-index: 0;
+/* Slow drift for parallax effect */
+@keyframes starsMove {
+  0% { background-position: 0 0, 15px 30px, 60px 20px, 90px 50px, 150px 80px; }
+  100% { background-position: -250px 0, -220px 30px, -180px 20px, -120px 50px, -300px 80px; }
+}
+
+@keyframes starsTwinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes starsMove {
+  0% { background-position: 0 0, 20px 40px, 50px 10px; }
+  100% { background-position: -200px 0, -160px 40px, -120px 10px; }
+}
+
+/* ---------- SECTION DIVIDERS ---------- */
+section {
+  padding: 3em 1em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* more visible divider lines */
+}
+
+/* ---------- HERO SECTION (Original) ---------- */
+#hero {
+    position: relative;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 5em 1em 4em;
+    background-color: transparent; /* gradient + stars show through */
+    overflow: hidden;
 }
 
 #hero .inner {
-  position: relative;
-  z-index: 1;
-  max-width: 750px;
-  margin: 0 auto;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 #hero img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1em;
-  border: 2px solid #444;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1em;
+    border: 2px solid #444;
 }
 
 #hero h1 {
-  font-size: 1.8em;
-  margin-bottom: 0.25em;
+    font-size: 1.8em;
+    margin-bottom: 0.25em;
 }
 
 #hero h2 {
-  font-weight: normal;
-  font-size: 1.1em;
-  color: #ccc;
-  margin-bottom: 1.5em;
+    font-weight: normal;
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 1.5em;
 }
 
 #hero .buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75em;
-  margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+    margin-bottom: 2em;
 }
 
 #hero .quote {
-  font-size: 1.2em;
-  line-height: 1.8;
-  color: #e0e0e0;
-  font-style: italic;
-}
-
-/* =========================================================
-   PAGE SECTIONS (Work / Personal / About / Footer)
-   ========================================================= */
-section {
-  padding: 3em 1em;
-  border-bottom: 1px solid #2a2a2a;
-}
-
-.inner {
-  max-width: 750px;
-  margin: 0 auto;
-}
-
-#work h2, #personal h2, #about h2 {
-  margin-bottom: 1em;
-}
-
-.contact-info {
-  margin-top: 1.5em;
-  line-height: 1.6;
-}
-
-footer {
-  padding: 2em 1em;
-  background: #111;
-  border-top: 1px solid #2a2a2a;
-  color: #aaa;
-  font-size: 0.9em;
-}
-
-/* =========================================================
-   BUSINESS CARD PAGE
-   ========================================================= */
-.card-container {
-  width: 80%;
-  max-width: 260px;
-  height: 400px;
-  perspective: 1000px;
-  margin: 40px auto 15px;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.card-face img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-}
-
-/* Download Button */
-button.download-btn {
-  background: #d4af37;
-  color: #111;
-  border: none;
-  padding: 10px 25px;
-  font-size: 0.95rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-weight: 600;
-  text-align: center;
-  display: block;
-  margin: 15px auto;
-}
-
-button.download-btn:hover {
-  background: #bfa232;
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* QR Code + Contact Info */
-img.qr-code {
-  display: block;
-  margin: 15px auto 10px;
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-}
-
-p.contact-info {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
-/* =========================================================
-   RESPONSIVE ADJUSTMENTS
-   ========================================================= */
-@media screen and (max-width: 480px) {
-  body { font-size: 15px; }
-
-  .button {
-    width: 90%;
-    max-width: 220px;
-    padding: 1em 1.2em;
-    font-size: 1em;
-  }
-
-  #hero {
-    padding: 4em 1em 3em;
-  }
-
-  #hero img {
-    width: 110px;
-    height: 110px;
-  }
-
-  #hero .quote {
-    font-size: 1.05em;
-  }
-
-  .card-container {
-    max-width: 220px;
-    height: 340px;
-  }
-}
-
-/* ---------- HERO BACKGROUND WITH BLURRED LOGO ---------- */
-#hero {
-    position: relative;
-    width: 100%;
-    min-height: 600px; /* adjust as needed for content */
-    background: url('https://RidleySamm.github.io/images/logo.jpg') no-repeat center center;
-    background-size: cover;
-    overflow: hidden; /* ensures content stays within hero section */
-}
-
-/* Create a dark blur overlay for readability */
-#hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(26, 26, 26, 0.7); /* dark overlay */
-    filter: blur(12px); /* out-of-focus effect */
-    z-index: 0; /* behind content */
-}
-
-/* Inner content box */
-#hero .inner {
-    position: relative;
-    z-index: 1; /* above blurred background */
-    max-width: 750px;
-    margin: 0 auto;
-    padding: 3em 1.5em;
-    background: rgba(26,26,26,0.6); /* semi-transparent box */
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #e0e0e0;
+    font-style: italic;
 }
