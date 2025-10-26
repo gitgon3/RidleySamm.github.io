@@ -1,0 +1,307 @@
+/* =========================================================
+   SAM (RIDLEY) HUTCHISON — MAIN STYLESHEET
+   Supports: Homepage, Gallery, Plans, Business Card
+   ========================================================= */
+
+/* ---------- BASE RESET & BODY ---------- */
+body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  padding-top: 30px; /* space for fixed navbar */
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  color: #f0f0f0;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #ec4d98;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   NAVIGATION BAR
+   ========================================================= */
+.navbar {
+  width: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   BUTTONS (GLOBAL)
+   ========================================================= */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75em auto;
+  width: 80%;
+  max-width: 250px;
+  text-align: center;
+  padding: 1.1em 1.5em;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 8px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.button.instagram { background-color: #ba33d6; color: white; }
+.button.youtube { background-color: #d20d0d; color: white; }
+.button.cashapp { background-color: #12df5a; color: white; }
+
+/* =========================================================
+   HERO SECTION (Profile + Buttons + Quote)
+   ========================================================= */
+#hero {
+  position: relative;
+  background: url("images/logo.jpg") center center / cover no-repeat;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 5em 1em 4em;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+#hero .inner {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#hero img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+  border: 2px solid #444;
+}
+
+#hero h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.25em;
+}
+
+#hero h2 {
+  font-weight: normal;
+  font-size: 1.1em;
+  color: #ccc;
+  margin-bottom: 1.5em;
+}
+
+#hero .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75em;
+  margin-bottom: 2em;
+}
+
+#hero .quote {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-style: italic;
+}
+
+/* =========================================================
+   PAGE SECTIONS (Work / Personal / About / Footer)
+   ========================================================= */
+section {
+  padding: 3em 1em;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.inner {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#work h2, #personal h2, #about h2 {
+  margin-bottom: 1em;
+}
+
+.contact-info {
+  margin-top: 1.5em;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 2em 1em;
+  background: #111;
+  border-top: 1px solid #2a2a2a;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+/* =========================================================
+   BUSINESS CARD PAGE
+   ========================================================= */
+.card-container {
+  width: 80%;
+  max-width: 260px;
+  height: 400px;
+  perspective: 1000px;
+  margin: 40px auto 15px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Download Button */
+button.download-btn {
+  background: #d4af37;
+  color: #111;
+  border: none;
+  padding: 10px 25px;
+  font-size: 0.95rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  margin: 15px auto;
+}
+
+button.download-btn:hover {
+  background: #bfa232;
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* QR Code + Contact Info */
+img.qr-code {
+  display: block;
+  margin: 15px auto 10px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+p.contact-info {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* =========================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================= */
+@media screen and (max-width: 480px) {
+  body { font-size: 15px; }
+
+  .button {
+    width: 90%;
+    max-width: 220px;
+    padding: 1em 1.2em;
+    font-size: 1em;
+  }
+
+  #hero {
+    padding: 4em 1em 3em;
+  }
+
+  #hero img {
+    width: 110px;
+    height: 110px;
+  }
+
+  #hero .quote {
+    font-size: 1.05em;
+  }
+
+  .card-container {
+    max-width: 220px;
+    height: 340px;
+  }
+}
