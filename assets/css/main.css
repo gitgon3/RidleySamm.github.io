@@ -39,7 +39,7 @@ body::before {
 
 /* Twinkle Animation */
 @keyframes starsTwinkle {
-  0%, 100% { opacity: 0.8; }
+  0%, 100% { opacity: 0.0; }
   50% { opacity: 1; }
 }
 
@@ -47,16 +47,6 @@ body::before {
 @keyframes starsMove {
   0% { background-position: 0 0, 15px 30px, 60px 20px, 90px 50px, 150px 80px; }
   100% { background-position: -250px 0, -220px 30px, -180px 20px, -120px 50px, -300px 80px; }
-}
-
-@keyframes starsTwinkle {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
-}
-
-@keyframes starsMove {
-  0% { background-position: 0 0, 20px 40px, 50px 10px; }
-  100% { background-position: -200px 0, -160px 40px, -120px 10px; }
 }
 
 /* ---------- SECTION DIVIDERS ---------- */
