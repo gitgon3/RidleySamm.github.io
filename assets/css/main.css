@@ -1,6 +1,6 @@
-/* ---------- BASE RESET & BODY (Updated with parallax stars) ---------- */
+/* ---------- BASE RESET & BODY (Darker & Subtle) ---------- */
 body {
-  background: linear-gradient(to bottom, #1b1a2f, #2a2a4f); /* dark purplish-blue gradient */
+  background: linear-gradient(to bottom, #0f0e1f, #1a1a3b); /* darker purplish-blue gradient */
   color: #e0e0e0;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -13,7 +13,7 @@ body {
   position: relative;
 }
 
-/* ---------- PARALLAX TWINKLING STARS (DENSE & RANDOMIZED) ---------- */
+/* ---------- PARALLAX TWINKLING STARS (Enhanced for mobile) ---------- */
 body::before {
   content: "";
   position: fixed;
@@ -32,14 +32,14 @@ body::before {
   background-position: 
     0 0, 15px 30px, 60px 20px, 90px 50px, 150px 80px;
   background-attachment: fixed; /* parallax effect */
-  animation: starsTwinkle 10s linear infinite, starsMove 250s linear infinite;
+  animation: starsTwinkle 5s ease-in-out infinite, starsMove 200s linear infinite; /* faster twinkle */
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-/* Twinkle Animation */
+/* Twinkle Animation (more noticeable) */
 @keyframes starsTwinkle {
-  0%, 100% { opacity: 0.0; }
+  0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
 }
 
